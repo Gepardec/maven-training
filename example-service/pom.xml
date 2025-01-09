@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>example-service</artifactId>
-    <name>example-webapp</name>
+    <name>example-service</name>
     <packaging>jar</packaging>
 
     <dependencies>

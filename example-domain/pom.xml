@@ -12,7 +12,7 @@
     </parent>
 
     <artifactId>example-domain</artifactId>
-    <name>example-webapp</name>
+    <name>example-domain</name>
     <packaging>jar</packaging>
 
 
