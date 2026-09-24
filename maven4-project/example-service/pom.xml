@@ -10,8 +10,7 @@
     <name>example-service</name>
 
     <dependencies>
-        <!-- Maven 4: no version needed for projects of the same reactor.
-             Consumer POM: <version>1.0-SNAPSHOT</version> is filled in. -->
+
         <dependency>
             <groupId>com.gepardec.maven-training</groupId>
             <artifactId>example-domain</artifactId>

@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Maven 4: root="true" marks the root directory of the project (${project.rootDirectory}) -->
+<!--
+    TODO:
+         root="true" marks the root directory of the project (${project.rootDirectory}) -->
 <project xmlns="http://maven.apache.org/POM/4.1.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 https://maven.apache.org/xsd/maven-4.1.0.xsd"
          root="true">
-    <!-- Maven 4: model version 4.1.0 (build POM only, the consumer POM stays 4.0.0) -->
+    <!--
+    TODO:
+        model version 4.1.0 (build POM only, the consumer POM stays 4.0.0) -->
     <modelVersion>4.1.0</modelVersion>
 
     <groupId>com.gepardec.maven-training</groupId>
     <artifactId>example-parent</artifactId>
-    <!-- Maven 4: full CI-friendly version support, no flatten-maven-plugin needed.
-         Override with: mvn verify -Drevision=1.2.3 -->
+    <!--
+    TODO:
+        full CI-friendly version support, no flatten-maven-plugin needed.
+        Override with: mvn verify -Drevision=1.2.3 -->
     <version>${revision}</version>
+
     <packaging>pom</packaging>
     <name>example-parent</name>
 
     <!--
-        Maven 4: <subprojects> replaces <modules>.
-        It could even be omitted completely: with packaging "pom" and no <subprojects>,
-        Maven 4 discovers every direct subdirectory that contains a pom.xml.
+      TODO:
+        <subprojects> replaces <modules>.
+        (It could even be omitted completely: with packaging "pom" and no <subprojects>,
+        Maven 4 discovers every direct subdirectory that contains a pom.xml.)
     -->
     <subprojects>
         <subproject>example-bom</subproject>
@@ -35,13 +43,16 @@
     </properties>
 
     <!--
+    TODO:
         No dependencyManagement entries for our own subprojects:
         Maven 4 infers the version of dependencies on projects of the same reactor.
     -->
     <dependencyManagement>
         <dependencies>
-            <!-- Only import external BOMs. Importing a BOM from the same reactor
-                 (e.g. example-bom) triggers a warning in Maven 4. -->
+            <!--
+            TODO:
+                Only import external BOMs. Importing a BOM from the same reactor
+                (e.g. example-bom) triggers a warning in Maven 4. -->
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
@@ -52,14 +63,18 @@
         </dependencies>
     </dependencyManagement>
 
-    <!-- Maven 4 warns if plugin versions come from the Super POM, so pin them all -->
+    <!--
+    TODO:
+        Maven warns if plugin versions come from the Super POM, so pin them all -->
     <build>
         <pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <!-- because of the missing version, a warning will be in the log -->
+                    <!--
+                    TODO:
+                        because of the missing version, a warning will be in the log -->
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>

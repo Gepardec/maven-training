@@ -11,7 +11,18 @@
     <packaging>war</packaging>
 
     <dependencies>
-        <!-- Consumer POM (flattened): removed, provided scope is not transitive -->
+        <!--
+        TODO:
+             no version needed for projects of the same reactor.
+             Consumer POM: <version>1.0-SNAPSHOT</version> is filled in. -->
+        <dependency>
+            <groupId>com.gepardec.maven-training</groupId>
+            <artifactId>example-service</artifactId>
+        </dependency>
+
+        <!--
+        TODO:
+            Consumer POM (flattened): removed, the 'provided' scope is not transitive -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -19,13 +30,9 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Consumer POM: version filled in -->
-        <dependency>
-            <groupId>com.gepardec.maven-training</groupId>
-            <artifactId>example-service</artifactId>
-        </dependency>
-
-        <!-- Consumer POM (flattened): removed -->
+        <!--
+        TODO:
+            Consumer POM (flattened): removed -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -33,10 +40,11 @@
         </dependency>
     </dependencies>
 
-    <!-- Consumer POM (flattened): the whole <build> section is removed -->
+    <!--
+    TODO:
+        Consumer POM (flattened): the whole <build> section is removed -->
     <build>
         <plugins>
-            <!-- Integration tests (*IT.java) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
