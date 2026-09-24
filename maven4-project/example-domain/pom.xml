@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 https://maven.apache.org/xsd/maven-4.1.0.xsd">
+    <modelVersion>4.1.0</modelVersion>
+
+    <!-- Maven 4: parent inference. groupId, artifactId and version of the parent
+         are read from ../pom.xml. groupId and version of this project are inherited. -->
+    <parent/>
+
+    <artifactId>example-domain</artifactId>
+    <name>example-domain</name>
+
+    <dependencies>
+        <!-- Consumer POM (flattened): removed, test scope is not transitive -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

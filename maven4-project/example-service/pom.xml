@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 https://maven.apache.org/xsd/maven-4.1.0.xsd">
+    <modelVersion>4.1.0</modelVersion>
+
+    <parent/>
+
+    <artifactId>example-service</artifactId>
+    <name>example-service</name>
+
+    <dependencies>
+        <!-- Maven 4: no version needed for projects of the same reactor.
+             Consumer POM: <version>1.0-SNAPSHOT</version> is filled in. -->
+        <dependency>
+            <groupId>com.gepardec.maven-training</groupId>
+            <artifactId>example-domain</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

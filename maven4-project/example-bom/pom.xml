@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.1.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 https://maven.apache.org/xsd/maven-4.1.0.xsd">
+	<modelVersion>4.1.0</modelVersion>
+
+	<parent/>
+
+	<artifactId>example-bom</artifactId>
+	<name>example-bom</name>
+	<!--
+		Maven 4: dedicated "bom" packaging (model 4.1.0 only).
+		Separates a BOM (dependency versions for consumers) from a parent POM (build config).
+		In the consumer POM this becomes <packaging>pom</packaging>, so Maven 3 and
+		other tools can import it as usual.
+
+		Intended for EXTERNAL projects:
+			<dependency>
+				<groupId>com.gepardec.maven-training</groupId>
+				<artifactId>example-bom</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		Do not import it inside this reactor (Maven 4 warns about that).
+	-->
+	<packaging>bom</packaging>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.gepardec.maven-training</groupId>
+				<artifactId>example-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.gepardec.maven-training</groupId>
+				<artifactId>example-service</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.gepardec.maven-training</groupId>
+				<artifactId>example-webapp</artifactId>
+				<version>${project.version}</version>
+				<type>war</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
